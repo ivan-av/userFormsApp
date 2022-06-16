@@ -1,0 +1,64 @@
+.App {
+  /* text-align: center; */
+  margin-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.button__post-user{
+  font-size: 20px;
+  border-radius: 10px;
+
+  background-color: #d6b7de;
+  border: solid 4px rgb(196, 161, 217);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.435);
+}
+
+.button__post-user:hover{
+  background-color: #bea9c3;
+  border: solid 4px rgb(212, 212, 212);
+  transition: 0.1s;
+}
+.button__post-user:active{
+  background-color: #d6a4a2;
+
+}
+
+.card-of-user{
+  padding: 20px;
+  /* background-color: rgb(109, 76, 114); */
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #a2bad3 0%, #b39dc7 100%);
+
+  color: white;
+  border: solid 8px rgb(156, 131, 157);
+  border-radius: 12px;
+  width: 200px;
+}
+
+.card-of-user:hover{
+  border-color: rgb(227, 201, 229);
+  transition: 0.2s;
+}
+
+.card-of-user button {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.435);
+}
+
+.fa-solid{
+  color:rgb(109, 76, 114);
+}
+
+.fa-solid:hover{
+  color: rgb(227, 201, 229)
+}
