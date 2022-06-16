@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
 
-const Form = () => {
+const UsersForm = () => {
    const {handleSubmit, register} = useForm()
 
     const submit = data => {
@@ -35,4 +35,4 @@ const Form = () => {
   )
 }
 
-export default Form
+export default UsersForm
