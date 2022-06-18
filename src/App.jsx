@@ -1,33 +1,92 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import './App.css'
-import UsersList from './components/UsersList'
-import UsersForm from './components/UsersForm'
-import useUserCRUD from './hooks/useUserCRUD'
+import axios from 'axios'
+import ListUsers from './components/ListUsers'
+import FormUsers from './components/FormUsers'
+import { useForm } from 'react-hook-form'
 
+const URL = 'https://users-crud1.herokuapp.com/users/'
 
 function App() {
-  
-const {users, getAllUsers, createNewUser, deleteUser, putUpdateUser,  patchUpdateUser} = useUserCRUD()
 
-console.log(users)
+  const {handleSubmit, register, reset} = useForm()
+
+  const [users, setUsers] = useState()
+  const [isShowForm, setIsShowForm] = useState(false)
+  const [objectUpdate, setObjectUpdate] = useState()
+
+  const getAllUsers = () => {
+    axios.get(URL)
+      .then(res => setUsers(res.data))
+      .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    getAllUsers()
+  }, [])
+
+  const createUser = newUser => {
+    axios.post(URL, newUser)
+      .then(res => {
+        console.log(res.data)
+        getAllUsers()
+      })
+      .catch(err => console.log(err))
+  }
+
+  const updateUserById = (id, updateUser) => {
+
+    axios.patch(`${URL}${id}/`, updateUser)
+      .then(res => {
+        console.log(res.data)
+        getAllUsers()
+        setObjectUpdate()
+        setIsShowForm(false)
+      })
+      .catch(err => console.log(err))
+  }
+
+  const showForm = () => {
+    const obj = {
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
+      birthday: ''
+    }
+    reset(obj)
+    setIsShowForm(!isShowForm)
+  }
 
   return (
     <div className="App">
-      {/* <button onClick={deleteMovie}>Delete Movie</button> */}
-      <button onClick={createNewUser} className='button__post-user'>Post User</button>
-      {/* <button>Up</button> */}
-      <UsersForm />
-
+      <div>
+        <button onClick={showForm} className='button__post-user'>{isShowForm ? 'Hide Form' : 'Post User'}</button>
+      </div>
+      <div>
+        {
+          isShowForm &&
+          <FormUsers
+            createUser={createUser}
+            updateUserById={updateUserById}
+            objectUpdate={objectUpdate}
+            handleSubmit={handleSubmit}
+            reset={reset}
+            register={register}
+          />
+        }
+      </div>
       <div className='card-container'>
         {
           users?.map(user => (
-            <UsersList
+            <ListUsers
               key={user.id}
               user={user}
-              deleteUser={deleteUser}
-              getAllUser={getAllUsers}
-              patchUpdateUser={patchUpdateUser}
+              URL={URL}
+              getAllUsers={getAllUsers}
+              setObjectUpdate={setObjectUpdate}
+              setIsShowForm={setIsShowForm}
+              reset={reset}
             />
           ))
         }
