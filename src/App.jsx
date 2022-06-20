@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <button onClick={showForm} className='button__post-user'>{isShowForm ? 'Hide Form' : 'Post User'}</button>
+        <button onClick={showForm} className='button__post-user'>{isShowForm ? '- Close' : '+ Create New User'}</button>
       </div>
       <div>
         {

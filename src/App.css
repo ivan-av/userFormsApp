@@ -1,11 +1,48 @@
-.App {
-  /* text-align: center; */
-  margin-top: 30px;
-
+.App {  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
+  
+  margin-top: 30px;
+  margin: 0;
+  padding: 0 0 30px 0;
+
+  min-height: 100vh;
+
+  background-image: url(./assets/img/svg/bg_image.svg);
+}
+
+button {
+    box-shadow: 2px 2px 2px rgba(69, 69, 69, 0.435);
+}
+
+button:active{
+  transform: translate(0%, 3%);
+  box-shadow: 2px 2px 2px rgba(29, 29, 29, 0.435);
+}
+
+
+.button__post-user{
+  padding: 8px 15px;
+  margin-top: 20px;
+  
+  border: none;
+  border-radius: 5px;
+  
+  font-size: 15px;
+  color: white;
+
+  background-color: #555a88;
+}
+
+.button__post-user:hover{
+  background-color: #7980c2;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.button__post-user:active{
+  background-color: #d6a4a2;
 }
 
 .card-container{
@@ -15,40 +52,21 @@
   gap: 20px;
 }
 
-.button__post-user{
-  font-size: 20px;
-  border-radius: 10px;
-
-  background-color: #d6b7de;
-  border: solid 4px rgb(196, 161, 217);
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.435);
-}
-
-.button__post-user:hover{
-  background-color: #bea9c3;
-  border: solid 4px rgb(212, 212, 212);
-  transition: 0.1s;
-}
-.button__post-user:active{
-  background-color: #d6a4a2;
-
-}
-
 .card-of-user{
   padding: 20px;
-  /* background-color: rgb(109, 76, 114); */
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #a2bad3 0%, #b39dc7 100%);
+  background-color: rgb(253, 253, 253);
+  box-shadow: 3px 3px 3px rgb(193, 193, 193);
 
-  color: white;
-  border: solid 8px rgb(156, 131, 157);
+  color: rgb(92, 90, 90);
   border-radius: 12px;
   width: 200px;
 }
 
 .card-of-user:hover{
-  border-color: rgb(227, 201, 229);
-  transition: 0.2s;
+  transform: translate(0%, -2%);
+  box-shadow: 3px 3px 3px rgb(142, 142, 142);
+
+  transition: 0.4s;
 }
 
 .card-of-user button {
@@ -75,6 +93,7 @@
 
   padding: 15px;
 
+  transition: 0.2s;
 }
 
 
