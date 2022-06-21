@@ -59,23 +59,25 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <div>
-        <button onClick={showForm} className='button__post-user'>{isShowForm ? '- Close' : '+ Create New User'}</button>
-      </div>
-      <div>
-        {
-          isShowForm &&
-          <FormUsers
-            createUser={createUser}
-            updateUserById={updateUserById}
-            objectUpdate={objectUpdate}
-            handleSubmit={handleSubmit}
-            reset={reset}
-            register={register}
-          />
-        }
-      </div>
+    <div className="App">        
+        <div className='first-section__button'>
+          <button onClick={showForm} className='button__post-user'>{isShowForm ? '- Close' : '+ Create New User'}</button>
+        </div>
+
+        <div className='first-section__form'>
+          {
+            isShowForm &&
+            <FormUsers
+              createUser={createUser}
+              updateUserById={updateUserById}
+              objectUpdate={objectUpdate}
+              handleSubmit={handleSubmit}
+              reset={reset}
+              register={register}
+            />
+          }
+        </div>
+
       <div className='card-container'>
         {
           users?.map(user => (

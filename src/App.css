@@ -6,11 +6,15 @@
   
   margin-top: 30px;
   margin: 0;
-  padding: 0 0 30px 0;
+  padding: 0 0px 30px 0px;
 
   min-height: 100vh;
 
   background-image: url(./assets/img/svg/bg_image.svg);
+
+  /* border: 1px solid red; */
+
+  position: relative;
 }
 
 button {
@@ -23,6 +27,11 @@ button:active{
 }
 
 
+.first-section__button{
+  position: fixed;
+  z-index: 2;
+  /* align-self: center; */
+}
 .button__post-user{
   padding: 8px 15px;
   margin-top: 20px;
@@ -33,7 +42,7 @@ button:active{
   font-size: 15px;
   color: white;
 
-  background-color: #555a88;
+  background-color: #323c9a;
 }
 
 .button__post-user:hover{
@@ -45,7 +54,76 @@ button:active{
   background-color: #d6a4a2;
 }
 
+.first-section__form{
+  position:fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+.form__background{
+  height: 100vh;
+  background-color: #4d4e52b7;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form__container{
+  background-color: #ffffffdf;
+  width: 270px;
+  height: 200px;
+
+  padding-top: 50px;
+  color: rgb(81, 82, 142);
+  font-weight: 500;
+  text-shadow: 2px 2px 3px rgba(166, 159, 159, 0.702);
+
+  border-radius: 5px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  gap: 10px;
+
+  padding: 15px;
+
+  box-shadow: 0px 0px 20px rgb(55, 47, 96);
+}
+
+.form__container label{
+  padding-right: 10px;
+}
+
+.form__container input{
+  border-color: #888db967; 
+}
+
+.form__container button{
+  background-color: #c72828d1;
+  border-radius: 5px;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 3px rgba(229, 226, 224, 0.237);
+  
+
+  padding: 8px 8px;
+}
+
+.form__container button:hover{
+  background-color: #d6a4a2;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.form__container button:active{
+  background-color: #d6a4a288;
+}
+
 .card-container{
+  margin-top: 70px;
+  
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -53,13 +131,19 @@ button:active{
 }
 
 .card-of-user{
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-around;
+  gap: 15px;
+
+  padding: 20px 20px;
   background-color: rgb(253, 253, 253);
   box-shadow: 3px 3px 3px rgb(193, 193, 193);
 
   color: rgb(92, 90, 90);
   border-radius: 12px;
-  width: 200px;
+  width: min(250px);
+
 }
 
 .card-of-user:hover{
@@ -69,31 +153,82 @@ button:active{
   transition: 0.4s;
 }
 
-.card-of-user button {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.435);
+.user__name{
+  padding-bottom: 5px;
+  
+  font-weight: 700;
+  font-size: 21px;
+  border-bottom: 1px solid rgb(199, 198, 198);
+  text-align: center;
 }
 
-.fa-solid{
-  color:rgb(109, 76, 114);
-}
-
-.fa-solid:hover{
-  color: rgb(227, 201, 229)
-}
-
-.form__container{
-  background-color: #8EC5FC;
-
-  border-radius: 5px;
-
+.user__details{
   display: flex;
   flex-direction: column;
-  align-items:flex-end;
   gap: 5px;
+}
 
-  padding: 15px;
+.user-details__email{
+  font-size: 14px;
+}
 
+.card-of-user span{
+  font-size: 17px;
+  font-weight: 500;
+  color: rgb(23, 46, 176);
+}
+
+.user__button-container{
+  background-color: none;
+  border: none;
+  border-radius: 5px;
+  
+  display: flex;
+  flex-direction: row;
+  justify-content:end;
+  gap: 10px;
+}
+
+.user__button-container button{
+  background-color: white;
+  font-size: 20px;
+  border: none; 
+  /* border-radius: 5px; */
+  box-shadow: none;
+  text-shadow: 3px 3px 3px rgb(183, 183, 183);
+}
+
+.trash__icon{
+  color: rgb(229, 52, 52);
+}
+
+.trash__icon:hover{
+  cursor: pointer;
+  
+  color: rgb(228, 128, 128);
   transition: 0.2s;
+}
+
+.trash__icon:active{
+  color: rgb(228, 175, 128);
+  transform: translate(0%, 3%);
+}
+
+
+.pencil__icon{
+  color: rgb(72, 91, 234);
+}
+
+.pencil__icon:hover {
+  cursor: pointer;
+
+  color:rgb(142, 144, 228);
+  transition: 0.2s;
+}
+
+.pencil__icon:active {
+  color:rgb(173, 173, 202);
+  transform: translate(0%, 3%);
 }
 
 
