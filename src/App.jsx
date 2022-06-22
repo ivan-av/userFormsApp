@@ -30,6 +30,7 @@ function App() {
       .then(res => {
         console.log(res.data)
         getAllUsers()
+        setIsShowForm(false)
       })
       .catch(err => console.log(err))
   }

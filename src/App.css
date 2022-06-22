@@ -71,23 +71,22 @@ button:active{
 
 .form__container{
   background-color: #ffffffdf;
-  width: 270px;
-  height: 200px;
+  width: 280px;
+  /* height: 250px; */
 
-  padding-top: 50px;
   color: rgb(81, 82, 142);
   font-weight: 500;
   text-shadow: 2px 2px 3px rgba(166, 159, 159, 0.702);
 
-  border-radius: 5px;
+  border-radius: 6px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 
-  gap: 10px;
+  gap: 12px;
 
-  padding: 15px;
+  padding: 18px 18px 18px 8px;
 
   box-shadow: 0px 0px 20px rgb(55, 47, 96);
 }
@@ -97,7 +96,10 @@ button:active{
 }
 
 .form__container input{
-  border-color: #888db967; 
+  padding: 6px;
+
+  border-color: #888db967;
+  border-radius: 5px;
 }
 
 .form__container button{
@@ -107,7 +109,6 @@ button:active{
   color: rgb(255, 255, 255);
   text-shadow: 2px 2px 3px rgba(229, 226, 224, 0.237);
   
-
   padding: 8px 8px;
 }
 
